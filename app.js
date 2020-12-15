@@ -73,7 +73,7 @@ What will be the query you would write for each one below? Select the first...
 //   }
 // )
 
-/* ex09: wire fetch call in app */
+/* ex10: error handling */
 
 // reference to the "button id" in js
 var btnTranslate = document.querySelector("#btn-translate");
@@ -92,11 +92,18 @@ function getTranslationURL(text) {
   return serverURL + '?text=' + text;
 }
 
+// error handling function
+function errorHandler() {
+  console.log("error occured", error);
+  alert("something went wrong with server\nPlease try again after some time...")
+}
+
 // function to get the desired data
 function doFetch(inputText) {
   return fetch(getTranslationURL(inputText)) // promise me when you get the data
     .then(response => response.json()) //.then( do something by using arrow function syntax ) 
     .then(json => console.log(json.contents.translated)) // .then console.log( the desired data from the json )
+    .catch(errorHandler) 
 }
 
 // callback function to perform desired action
@@ -110,3 +117,4 @@ btnTranslate.addEventListener(
   "click",
   clickHandler
 )
+
