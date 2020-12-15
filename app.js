@@ -19,19 +19,19 @@
 // // telling browser whenever there's a click event perform this function
 // btnTranslate.addEventListener(
 //   "click",
-//   function clickEventHandler() {
+//   function clickHandler() {
 //     console.log("Clicked")
 //   }
 // )
 
-/* ex4:  */ 
+/* ex4:  */
 // var btnTranslate = document.querySelector("#btn-translate");
 // // Storing input text in txtInput
 // var txtInput = document.querySelector("#txt-input");
 
 // btnTranslate.addEventListener(
 //   "click",
-//   function clickEventHandler() {
+//   function clickHandler() {
 //     console.log("Clicked")
 //     console.log("input", txtInput.value)  // entered txt value
 //   }
@@ -54,6 +54,27 @@ What will be the query you would write for each one below? Select the first...
 
 /* ex05: wire a div to show output */
 
+// // reference to the "button id" in js
+// var btnTranslate = document.querySelector("#btn-translate");
+
+// // Storing input text in txtInput
+// var txtInput = document.querySelector("#txt-input");
+
+// // refrence to element with id output-box
+// var outputBox = document.querySelector("#output-box");
+
+// // sets html text in the object to be "COOL"
+// // outputBox.innerText = "COOL"
+
+// btnTranslate.addEventListener(
+//   "click",
+//   function clickHandler() {
+//     outputBox.innerText = "Translated: \n" + txtInput.value;
+//   }
+// )
+
+/* ex09: wire fetch call in app */
+
 // reference to the "button id" in js
 var btnTranslate = document.querySelector("#btn-translate");
 
@@ -63,13 +84,29 @@ var txtInput = document.querySelector("#txt-input");
 // refrence to element with id output-box
 var outputBox = document.querySelector("#output-box");
 
-// sets html text in the object to be "COOL"
-// outputBox.innerText = "COOL"
+// lesson-four yoda url
+var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
+// convert into desired url
+function getTranslationURL(text) {
+  return serverURL + '?text=' + text;
+}
+
+// function to get the desired data
+function doFetch(inputText) {
+  return fetch(getTranslationURL(inputText)) // promise me when you get the data
+    .then(response => response.json()) //.then( do something by using arrow function syntax ) 
+    .then(json => console.log(json.contents.translated)) // .then console.log( the desired data from the json )
+}
+
+// callback function to perform desired action
+function clickHandler() {
+  var inputText = txtInput.value; // storing txt value from txt-input box
+  var translatedText = doFetch(inputText); // store the translated text
+}
+
+// when click event happens perform the callback function(clickHandler)
 btnTranslate.addEventListener(
   "click",
-  function clickEventHandler() {
-    outputBox.innerText = "Translated: \n" + txtInput.value;    
-  }
+  clickHandler
 )
-
