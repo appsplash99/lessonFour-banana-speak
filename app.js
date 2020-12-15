@@ -26,4 +26,14 @@
 
 /* ex4:  */ 
 
-// 
+var btnTranslate = document.querySelector("#btn-translate");
+// Storing input text in txtInput
+var txtInput = document.querySelector("#txt-input");
+
+btnTranslate.addEventListener(
+  "click",
+  function clickEventHandler() {
+    console.log("Clicked")
+    console.log("input", txtInput.value)  // entered txt value
+  }
+)

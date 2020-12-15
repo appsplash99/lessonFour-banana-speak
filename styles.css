@@ -1,0 +1,19 @@
+
+body {
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+#btn-translate {
+  color: green;
+  margin: 1rem;
+}
+
+textarea {
+  display: block;
+  width: 90%;
+  height: 10vh;
+  margin: auto;
+
+}
