@@ -25,18 +25,17 @@
 // )
 
 /* ex4:  */ 
+// var btnTranslate = document.querySelector("#btn-translate");
+// // Storing input text in txtInput
+// var txtInput = document.querySelector("#txt-input");
 
-var btnTranslate = document.querySelector("#btn-translate");
-// Storing input text in txtInput
-var txtInput = document.querySelector("#txt-input");
-
-btnTranslate.addEventListener(
-  "click",
-  function clickEventHandler() {
-    console.log("Clicked")
-    console.log("input", txtInput.value)  // entered txt value
-  }
-)
+// btnTranslate.addEventListener(
+//   "click",
+//   function clickEventHandler() {
+//     console.log("Clicked")
+//     console.log("input", txtInput.value)  // entered txt value
+//   }
+// )
 
 // live challange
 /*
@@ -51,7 +50,26 @@ What will be the query you would write for each one below? Select the first...
       ans. querySelector("#input-btn")
     4... input element with an attribute name='translator'.
       ans. querySelector("input[name='translator']")
+*/
 
+/* ex05: wire a div to show output */
 
-    */
+// reference to the "button id" in js
+var btnTranslate = document.querySelector("#btn-translate");
+
+// Storing input text in txtInput
+var txtInput = document.querySelector("#txt-input");
+
+// refrence to element with id output-box
+var outputBox = document.querySelector("#output-box");
+
+// sets html text in the object to be "COOL"
+// outputBox.innerText = "COOL"
+
+btnTranslate.addEventListener(
+  "click",
+  function clickEventHandler() {
+    outputBox.innerText = "Translated: \n" + txtInput.value;    
+  }
+)
 
