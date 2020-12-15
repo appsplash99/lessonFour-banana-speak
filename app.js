@@ -85,7 +85,11 @@ var txtInput = document.querySelector("#txt-input");
 var outputBox = document.querySelector("#output-box");
 
 // lesson-four yoda url
-var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+// var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+
+// minion url
+var serverURL = "https://api.funtranslations.com/translate/minion.json";
+
 
 // convert into desired url
 function getTranslationURL(text) {
