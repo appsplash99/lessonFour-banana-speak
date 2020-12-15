@@ -37,3 +37,21 @@ btnTranslate.addEventListener(
     console.log("input", txtInput.value)  // entered txt value
   }
 )
+
+// live challange
+/*
+What will be the query you would write for each one below? Select the first...
+
+    1... textarea tag.
+      ans. query.querySelector("textarea")
+
+    2... element with a class btn-primary.
+      ans. querySelectorAll(".btn-primary")
+    3... element with an id input-btn.
+      ans. querySelector("#input-btn")
+    4... input element with an attribute name='translator'.
+      ans. querySelector("input[name='translator']")
+
+
+    */
+
