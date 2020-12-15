@@ -100,16 +100,20 @@ function errorHandler() {
 
 // function to get the desired data
 function doFetch(inputText) {
-  return fetch(getTranslationURL(inputText)) // promise me when you get the data
+  fetch(getTranslationURL(inputText)) // promise me when you get the data
     .then(response => response.json()) //.then( do something by using arrow function syntax ) 
-    .then(json => console.log(json.contents.translated)) // .then console.log( the desired data from the json )
+    .then(json => {
+        var translatedText = json.contents.translated; // .then store the desired data from the json
+        outputBox.innerText = translatedText; // and put it as Text within outputBox 
+      }
+    ) 
     .catch(errorHandler) 
 }
 
 // callback function to perform desired action
 function clickHandler() {
   var inputText = txtInput.value; // storing txt value from txt-input box
-  var translatedText = doFetch(inputText); // store the translated text
+  doFetch(inputText);
 }
 
 // when click event happens perform the callback function(clickHandler)
