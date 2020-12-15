@@ -12,15 +12,18 @@
 /*ex:3 wiring button click*/
 
 // reference to the "button id" in js
-var btnTranslate = document
-                    .querySelector("#btn-translate");
+// var btnTranslate = document
+//                     .querySelector("#btn-translate");
 
-// listening to an event and
-// telling browser whenever there's a click event perform this function
-btnTranslate.addEventListener(
-  "click",
-  function clickEventHandler() {
-    console.log("Clicked")
-  }
-)
+// // listening to an event and
+// // telling browser whenever there's a click event perform this function
+// btnTranslate.addEventListener(
+//   "click",
+//   function clickEventHandler() {
+//     console.log("Clicked")
+//   }
+// )
 
+/* ex4:  */ 
+
+// 
